@@ -193,10 +193,6 @@ class BasicModem(object):
 
             if cid_field in ['NMBR']:
                 self.cid_number = cid_data
-                continue
-
-            if cid_field in ['NAME']:
-                self.cid_name = cid_data
                 self.set_state(self.STATE_CALLERID)
                 self.incomingcallnotificationfunc(self.state)
                 _LOGGER.debug('CID: %s %s %s',
